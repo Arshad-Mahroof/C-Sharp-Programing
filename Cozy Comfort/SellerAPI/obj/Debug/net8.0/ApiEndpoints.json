@@ -1,0 +1,154 @@
+[
+  {
+    "ContainingType": "SellerAPI.Controllers.SellerController",
+    "Method": "AddStock",
+    "RelativePath": "api/Seller/addstock",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "stock",
+        "Type": "SellerAPI.Models.SellerStock",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellerAPI.Controllers.SellerController",
+    "Method": "DeleteOrder",
+    "RelativePath": "api/Seller/deleteorder/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellerAPI.Controllers.SellerController",
+    "Method": "DeleteStock",
+    "RelativePath": "api/Seller/deletestock/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellerAPI.Controllers.SellerController",
+    "Method": "GetOrders",
+    "RelativePath": "api/Seller/orders",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellerAPI.Controllers.SellerController",
+    "Method": "PlaceOrder",
+    "RelativePath": "api/Seller/placeorder",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "SellerAPI.Models.OrderRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellerAPI.Controllers.SellerController",
+    "Method": "RequestFromDistributor",
+    "RelativePath": "api/Seller/requestfromdistributor",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "SellerAPI.Models.OrderRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellerAPI.Controllers.SellerController",
+    "Method": "GetStock",
+    "RelativePath": "api/Seller/stock",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[SellerAPI.Models.SellerStock, SellerAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SellerAPI.Controllers.SellerController",
+    "Method": "UpdateOrder",
+    "RelativePath": "api/Seller/updateorder/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updatedOrder",
+        "Type": "SellerAPI.Models.CustomerOrder",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SellerAPI.Controllers.SellerController",
+    "Method": "UpdateStock",
+    "RelativePath": "api/Seller/updatestock/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updatedStock",
+        "Type": "SellerAPI.Models.SellerStock",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

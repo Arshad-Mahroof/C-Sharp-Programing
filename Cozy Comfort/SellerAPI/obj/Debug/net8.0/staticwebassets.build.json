@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "WqEF2pMR+Kb3OkDtfVdAVAkaN07ERTsllZqFcdiCRLs=",
+  "Source": "SellerAPI",
+  "BasePath": "_content/SellerAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
