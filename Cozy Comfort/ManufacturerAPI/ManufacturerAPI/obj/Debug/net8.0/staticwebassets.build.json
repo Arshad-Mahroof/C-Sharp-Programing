@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "Wdw2eDwfYlrzQ2MUfbZxZ5N8Zx5JcyFdn8JvTcVkONI=",
+  "Source": "ManufacturerAPI",
+  "BasePath": "_content/ManufacturerAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
