@@ -1,0 +1,65 @@
+﻿@page
+@model WebClient.Pages.ItemModel
+@{
+    ViewData["Title"] = "Available Blankets";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="card border-0 shadow rounded-4">
+                <div class="card-header bg-gradient bg-primary text-white d-flex justify-content-between align-items-center">
+                    <h2 class="mb-0">🧺 Available Blankets</h2>
+                    <span class="badge bg-light text-dark">@Model.Blankets.Count item(s)</span>
+                </div>
+                <div class="card-body p-4">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover align-middle text-center">
+                            <thead class="table-light">
+                                <tr class="text-uppercase fw-semibold">
+                                    <th>Blanket Name</th>
+                                    <th>Material</th>
+                                    <th>Available Quantity</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.Blankets)
+                                {
+                                    var quantityClass = item.quantity < 10 ? "text-danger fw-bold" :
+                                    item.quantity < 30 ? "text-warning" :
+                                    "text-success";
+
+                                    <tr>
+                                        <td>@item.blanketName</td>
+                                        <td>@item.Material</td>
+                                        <td class="@quantityClass">@item.quantity</td>
+                                        <td>
+                                            <form method="post" asp-page-handler="Delete" asp-route-id="@item.Id" onsubmit="return confirm('Are you sure you want to delete this blanket?');">
+                                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                    @if (!Model.Blankets.Any())
+                    {
+                        <div class="alert alert-warning text-center mt-3">
+                            No blankets available at the moment.
+                        </div>
+                    }
+
+                    @if (TempData["Message"] != null)
+                    {
+                        <div class="alert alert-info mt-3 text-center">
+                            @TempData["Message"]
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

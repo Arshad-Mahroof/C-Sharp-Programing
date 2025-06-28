@@ -1,0 +1,61 @@
+﻿@page
+@model SellerWeb.Pages.RequestFromDistributorModel
+@{
+    ViewData["Title"] = "Request Stock from Distributor";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-lg rounded-4">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">📦 Request Stock from Distributor</h3>
+                </div>
+                <div class="card-body p-4">
+                    <form method="post">
+                        <div class="mb-3">
+                            <label asp-for="Request.CustomerName" class="form-label">Customer Name</label>
+                            <input asp-for="Request.CustomerName" class="form-control" placeholder="Enter customer name" required />
+                            <span asp-validation-for="Request.CustomerName" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Request.BlanketName" class="form-label">Blanket Name</label>
+                            <input asp-for="Request.BlanketName" class="form-control" placeholder="Enter blanket name" required />
+                            <span asp-validation-for="Request.BlanketName" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Request.Material" class="form-label">Material</label>
+                            <input asp-for="Request.Material" class="form-control" placeholder="Enter material type" required />
+                            <span asp-validation-for="Request.Material" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Request.Quantity" class="form-label">Quantity</label>
+                            <input asp-for="Request.Quantity" class="form-control" type="number" min="1" placeholder="Enter quantity" required />
+                            <span asp-validation-for="Request.Quantity" class="text-danger small"></span>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary fw-semibold">📤 Request Stock</button>
+                        </div>
+                    </form>
+
+                    @if (!string.IsNullOrEmpty(Model.Message))
+                    {
+                        <div class="alert alert-success text-center mt-4">@Model.Message</div>
+                    }
+                    @if (!string.IsNullOrEmpty(Model.Error))
+                    {
+                        <div class="alert alert-danger text-center mt-4">@Model.Error</div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

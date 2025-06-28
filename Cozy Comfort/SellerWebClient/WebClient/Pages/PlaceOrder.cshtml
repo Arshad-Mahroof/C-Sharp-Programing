@@ -1,0 +1,57 @@
+﻿@page
+@model WebClient.Pages.PlaceOrderModel
+@{
+    ViewData["Title"] = "Place Order";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-lg rounded-4">
+                <div class="card-header bg-success text-white">
+                    <h3 class="mb-0">📝 Place a New Order</h3>
+                </div>
+                <div class="card-body p-4">
+                    <form method="post">
+                        <div class="mb-3">
+                            <label asp-for="Order.CustomerName" class="form-label">Customer Name</label>
+                            <input asp-for="Order.CustomerName" class="form-control" placeholder="Enter your name" />
+                            <span asp-validation-for="Order.CustomerName" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Order.BlanketName" class="form-label">Blanket Name</label>
+                            <input asp-for="Order.BlanketName" class="form-control" placeholder="e.g., Cozy Cotton" />
+                            <span asp-validation-for="Order.BlanketName" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Order.Material" class="form-label">Material</label>
+                            <input asp-for="Order.Material" class="form-control" placeholder="e.g., Wool, Fleece" />
+                            <span asp-validation-for="Order.Material" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Order.Quantity" class="form-label">Quantity</label>
+                            <input asp-for="Order.Quantity" class="form-control" type="number" min="1" placeholder="Enter quantity" />
+                            <span asp-validation-for="Order.Quantity" class="text-danger small"></span>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success fw-semibold">✔️ Place Order</button>
+                        </div>
+                    </form>
+
+                    @if (ViewData["Message"] != null)
+                    {
+                        <div class="alert alert-info text-center mt-4">@ViewData["Message"]</div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
